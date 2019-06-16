@@ -1,5 +1,6 @@
 #include <string>
 #include <vector>
+#include <map>
 #include <compile_time_magic.h>
 
 namespace estd
@@ -34,4 +35,6 @@ void test_all()
     static_assert(!has_method_cbegin_v<int>);
 
     static_assert(is_container_v<vec> && !is_container_v<TestClass>);
+
+    static_assert(has_method_find_v<std::map<int, double>, int>);
 }

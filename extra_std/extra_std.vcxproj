@@ -130,6 +130,12 @@
     <ClCompile Include="tests\tests.cpp" />
     <ClCompile Include="tests\test_compile_magic.cpp" />
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="include\compile_time_magic.h" />
+    <ClInclude Include="include\extra_algorithm.h" />
+    <ClInclude Include="include\has_method.h" />
+    <ClInclude Include="include\has_using.h" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
