@@ -17,7 +17,7 @@ public:
     void some_method(double) const;
 };
 
-int main()
+void test_all()
 {
     using namespace estd;
 
