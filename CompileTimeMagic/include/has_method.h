@@ -2,7 +2,7 @@
 
 #include <utility>
 
-#define CTM_HAS_METHOD(method_name)\
+#define ESTD_HAS_METHOD(method_name)\
 template <typename T, class ...Args>\
 class has_method_##method_name\
 {\

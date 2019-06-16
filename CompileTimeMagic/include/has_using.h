@@ -2,7 +2,7 @@
 
 #include <type_traits>
 
-#define CTM_HAS_TYPEDEF(typedef_name)\
+#define ESTD_HAS_TYPEDEF(typedef_name)\
 template <class T>\
 class has_##typedef_name\
 {\

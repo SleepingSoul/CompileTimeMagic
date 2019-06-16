@@ -2,11 +2,11 @@
 #include <vector>
 #include <compile_time_magic.h>
 
-namespace ctm
+namespace estd
 {
 
-CTM_HAS_TYPEDEF(some_type)
-CTM_HAS_METHOD(some_method)
+ESTD_HAS_TYPEDEF(some_type)
+ESTD_HAS_METHOD(some_method)
 
 }
 
@@ -19,7 +19,7 @@ public:
 
 int main()
 {
-    using namespace ctm;
+    using namespace estd;
 
     using vec = std::vector<int>;
     using str = std::string;
