@@ -14,7 +14,7 @@ class has_##typedef_name\
 \
 public:\
     using type = T;\
-    static bool const value = decltype(test<T>(nullptr))::value;\
+    static bool constexpr value = decltype(test<T>(nullptr))::value;\
 };\
 \
 template <class T>\

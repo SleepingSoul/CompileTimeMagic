@@ -32,4 +32,6 @@ int main()
     static_assert(has_method_size_v<std::vector<int>>);
 
     static_assert(!has_method_cbegin_v<int>);
+
+    static_assert(is_container_v<vec> && !is_container_v<TestClass>);
 }

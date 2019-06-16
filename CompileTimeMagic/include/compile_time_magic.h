@@ -20,4 +20,13 @@ CTM_HAS_METHOD(cend)
 CTM_HAS_METHOD(find)
 CTM_HAS_METHOD(size)
 
+template <class T>
+class is_container
+{
+    static constexpr bool value = has_method_begin_v<T> && ctm::has_method_end_v<T>;
+};
+
+template <class T>
+static constexpr bool is_container_v = is_container<T>::value;
+
 }
