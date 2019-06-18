@@ -16,7 +16,7 @@ and others.
 You can define your own checks with __ESTL_HAS_TYPEDEF(_typedef_name_), ESTL_HAS_METHOD(_method_name_)__
 
 ```
-template <TContainer>
+template <class TContainer>
 ...
 if constexpr(estd::has_key_type_v<TContainer> &&
     estd::has_method_find_v<TContainer, typename TContainer::key_type>)
