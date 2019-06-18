@@ -6,10 +6,10 @@ The things missing in STL
 ### 1. Compile time magic
 You can check if some class has typedef or method with parameters in compile time using one of methods:
 ```
-estl::has_value_type<>
-estl::has_size_type<>
-estl::has_key_type<>
-estl::has_method_cbegin<>
+estd::has_value_type<>
+estd::has_size_type<>
+estd::has_key_type<>
+estd::has_method_cbegin<>
 ```
 and others.
 
@@ -18,8 +18,8 @@ You can define your own checks with __ESTL_HAS_TYPEDEF(_typedef_name_), ESTL_HAS
 ```
 template <TContainer>
 ...
-if constexpr(estl::has_key_type_v<TContainer> &&
-    estl::has_method_find_v<TContainer, typename TContainer::key_type>)
+if constexpr(estd::has_key_type_v<TContainer> &&
+    estd::has_method_find_v<TContainer, typename TContainer::key_type>)
 {
     auto it = container.find(value);
     ...
