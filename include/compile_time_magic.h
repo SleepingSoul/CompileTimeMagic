@@ -21,7 +21,7 @@ ESTD_HAS_METHOD(find)
 ESTD_HAS_METHOD(size)
 
 template <class T>
-class is_container
+struct is_container
 {
     static constexpr bool value = has_method_begin_v<T> && has_method_end_v<T>;
 };

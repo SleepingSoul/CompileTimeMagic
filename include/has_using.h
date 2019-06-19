@@ -7,7 +7,7 @@ template <class T>\
 class has_##typedef_name\
 {\
     template <class C>\
-    static std::true_type test(typename C::##typedef_name*);\
+    static std::true_type test(typename C::typedef_name*);\
 \
     template <class C>\
     static std::false_type test(...);\
