@@ -1,4 +1,3 @@
-[![Build status](https://ci.appveyor.com/api/projects/status/oq545onv20jxg9rw?svg=true)](https://ci.appveyor.com/project/SleepingSoul/extra-std)
 # extra_std
 The things missing in STL
 
