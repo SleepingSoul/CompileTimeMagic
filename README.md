@@ -1,9 +1,15 @@
 [![Build status](https://ci.appveyor.com/api/projects/status/oq545onv20jxg9rw?svg=true)](https://ci.appveyor.com/project/SleepingSoul/extra-std)
-## extra_std
-
+# extra_std
 The things missing in STL
 
-### 1. Compile time magic
+#### Build status
+| Compiler      | Build status (master) |
+|-------------------------------|-----------------------|
+|   Visual Compiler (VS 2019)   |     [![Build status](https://ci.appveyor.com/api/projects/status/oq545onv20jxg9rw/branch/master?svg=true)](https://ci.appveyor.com/project/SleepingSoul/extra-std/branch/master)    |
+|              g++              |     [![Build status](https://ci.appveyor.com/api/projects/status/k8599s60qtp9rp49/branch/master?svg=true)](https://ci.appveyor.com/project/SleepingSoul/extra-std-9haqf/branch/master)
+
+
+#### 1. Compile time magic
 You can check if some class has typedef or method with parameters in compile time using one of methods:
 ```
 estd::has_value_type<>
@@ -31,7 +37,7 @@ else
 }
 ```
 
-### 2. Extra algorithms
+#### 2. Extra algorithms
 Useful algorithms such as estd::contains, estd::are_unique and others. Full list:
 ```
 estd::contains
