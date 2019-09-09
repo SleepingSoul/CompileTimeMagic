@@ -35,7 +35,7 @@ public:
     auto cbegin() const
     {
         ++m_calls["cbegin"];
-        return return base::cbegin();
+        return base::cbegin();
     }
 
     auto cend() const
