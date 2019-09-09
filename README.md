@@ -6,6 +6,7 @@ The things missing in STL
 |-------------------------------|-----------------------|
 |   Visual Compiler (VS 2019)   |     [![Build status](https://ci.appveyor.com/api/projects/status/oq545onv20jxg9rw/branch/master?svg=true)](https://ci.appveyor.com/project/SleepingSoul/extra-std/branch/master)    |
 |              g++              |     [![Build status](https://ci.appveyor.com/api/projects/status/k8599s60qtp9rp49/branch/master?svg=true)](https://ci.appveyor.com/project/SleepingSoul/extra-std-9haqf/branch/master)
+|clang|     [![Build status](https://ci.appveyor.com/api/projects/status/it2s4e40nqv94nlf/branch/master?svg=true)](https://ci.appveyor.com/project/SleepingSoul/extra-std-4mo3p/branch/master)
 
 
 #### 1. Compile time magic
@@ -23,17 +24,17 @@ You can define your own checks with __ESTL_HAS_TYPEDEF(_typedef_name_), ESTL_HAS
 ```
 template <class TContainer>
 ...
-if constexpr(estd::has_key_type_v<TContainer> &&
-    estd::has_method_find_v<TContainer, typename TContainer::key_type>)
+if constexpr(estd::has_key_type_v<TContainer>)
 {
-    auto it = container.find(value);
-    ...
+    if constexpr(estd::has_method_find_v<TContainer, typename TContainer::key_type>)
+    {
+        auto it = container.find(value);
+        ...
+    }
 }
-else
-{
-    auto it = std::find(container.begin(), container.end(), value);
-    ...
-}
+
+auto it = std::find(container.begin(), container.end(), value);
+...
 ```
 
 #### 2. Extra algorithms
