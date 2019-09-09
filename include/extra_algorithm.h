@@ -13,7 +13,7 @@ inline bool contains(TContainer const& container, TValue const& value)
     auto const cend = container.cend();
 
     if constexpr (has_key_type_v<TContainer> && has_mapped_type_v<TContainer> &&
-        has_method_find_v<TContainer, typename TContainer::key_type>)
+        has_method_find_v<TContainer, TValue>)
     {
         return container.find(static_cast<typename TContainer::key_type const&>(value)) != cend;
     }
@@ -36,7 +36,7 @@ inline std::pair<bool, typename TContainer::const_iterator> find(TContainer cons
     auto const cend = container.cend();
 
     if constexpr (has_key_type_v<TContainer> && has_mapped_type_v<TContainer> &&
-        has_method_find_v<TContainer, typename TContainer::key_type>)
+        has_method_find_v<TContainer, TValue>)
     {
         auto const it = container.find(value);
         return { it != cend, it };
@@ -91,8 +91,8 @@ inline bool all(TContainer const& container, TPred const& pred)
 template <class TContainer>
 inline bool are_unique(TContainer container)
 {
-    auto oldEnd = container.cend();
-    auto it = std::unique(container.cbegin(), container.cend());
+    auto oldEnd = container.end();
+    auto it = std::unique(container.begin(), container.end());
     return it == oldEnd;
 }
 

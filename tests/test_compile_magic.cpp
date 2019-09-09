@@ -18,7 +18,7 @@ public:
     void some_method(double) const;
 };
 
-void test_all()
+void compile_time_tests()
 {
     using namespace estd;
 
