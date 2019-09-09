@@ -24,17 +24,17 @@ You can define your own checks with __ESTL_HAS_TYPEDEF(_typedef_name_), ESTL_HAS
 ```
 template <class TContainer>
 ...
-if constexpr(estd::has_key_type_v<TContainer> &&
-    estd::has_method_find_v<TContainer, typename TContainer::key_type>)
+if constexpr(estd::has_key_type_v<TContainer>)
 {
-    auto it = container.find(value);
-    ...
+    if constexpr(estd::has_method_find_v<TContainer, typename TContainer::key_type>)
+    {
+        auto it = container.find(value);
+        ...
+    }
 }
-else
-{
-    auto it = std::find(container.begin(), container.end(), value);
-    ...
-}
+
+auto it = std::find(container.begin(), container.end(), value);
+...
 ```
 
 #### 2. Extra algorithms
