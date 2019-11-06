@@ -2,7 +2,7 @@ cmake_minimum_required (VERSION 3.1)
 
 set(PROJECT_NAME extra_std)
 
-project(${PROJECT_NAME} CXX)
+project(${PROJECT_NAME} С CXX)
 
 if (MSVC)
     add_compile_options(/W4 /WX-)
