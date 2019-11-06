@@ -11,7 +11,6 @@ else()
     set(THREADS_PREFER_PTHREAD_FLAG ON)
     find_package(Threads REQUIRED)
     target_link_libraries(Threads::Threads)
-    add_link_options(--no-as-needed)
 endif()
 
 set(INCLUDE_DIR include)
