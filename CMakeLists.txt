@@ -7,7 +7,7 @@ project(${PROJECT_NAME} CXX)
 if (MSVC)
     add_compile_options(/W4 /WX-)
 else()
-    add_compile_options(-Wall -Wpedantic)
+    add_compile_options(-Wall -Wpedantic -lpthread)
 endif()
 
 set(INCLUDE_DIR include)
