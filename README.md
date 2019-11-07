@@ -1,7 +1,7 @@
 # extra_std
 The things missing in STL
 
-#### Build status
+#### Buildability check + unit tests
 | Compiler      | Build status (master) |
 |-------------------------------|-----------------------|
 |   Visual Compiler (VS 2019)   |     [![Build status](https://ci.appveyor.com/api/projects/status/oq545onv20jxg9rw/branch/master?svg=true)](https://ci.appveyor.com/project/SleepingSoul/extra-std/branch/master)    |
