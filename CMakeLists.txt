@@ -2,15 +2,12 @@ cmake_minimum_required (VERSION 3.1)
 
 set(PROJECT_NAME extra_std)
 
-project(${PROJECT_NAME} C CXX)
+project(${PROJECT_NAME} CXX)
 
 if (MSVC)
     add_compile_options(/W4 /WX-)
 else()
     add_compile_options(-Wall -Wpedantic)
-    set(THREADS_PREFER_PTHREAD_FLAG ON)
-    find_package(Threads REQUIRED)
-    target_link_libraries(Threads::Threads)
 endif()
 
 set(INCLUDE_DIR include)
