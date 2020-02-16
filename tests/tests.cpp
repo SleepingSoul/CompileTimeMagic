@@ -12,6 +12,7 @@
 #include <gtest/gtest.h>
 
 #include <extra_algorithm.h>
+#include <string_utils.h>
 
 #include "test_containers.h"
 
@@ -173,6 +174,15 @@ TEST_F(ESTDTest, Test_Filter)
     const auto onlyEven = estd::filter(lst, isEven);
 
     ASSERT_EQ(onlyEven, std::list({ 2, 4 }));
+}
+
+TEST_F(ESTDTest, Test_Format)
+{
+    const char* const fmt = "Hello %s %d!";
+
+    const auto result = estd::format(fmt, "World", 255);
+
+    ASSERT_TRUE(result == "Hello World 255!");
 }
 
 int main(int argc, char* argv[])

@@ -8,7 +8,7 @@ namespace estd
 {
 
 template <class TContainer, class TValue>
-inline bool contains(const TContainer& container, const TValue& value)
+static bool contains(const TContainer& container, const TValue& value)
 {
     const auto cend = container.cend();
 
@@ -24,14 +24,14 @@ inline bool contains(const TContainer& container, const TValue& value)
 }
 
 template <class TContainer, class TPred>
-inline bool contains_if(const TContainer& container, TPred&& pred)
+static bool contains_if(const TContainer& container, TPred&& pred)
 {
     const auto cend = container.cend();
     return std::find_if(container.cbegin(), cend, std::forward<TPred>(pred)) != cend;
 }
 
 template <class TContainer, class TValue>
-inline std::pair<bool, typename TContainer::const_iterator> find(const TContainer& container, const TValue& value)
+static std::pair<bool, typename TContainer::const_iterator> find(const TContainer& container, const TValue& value)
 {
     const auto cend = container.cend();
 
@@ -49,7 +49,7 @@ inline std::pair<bool, typename TContainer::const_iterator> find(const TContaine
 }
 
 template <class TContainer, class TValue>
-inline std::pair<bool, typename TContainer::iterator> find(TContainer& container, const TValue& value)
+static std::pair<bool, typename TContainer::iterator> find(TContainer& container, const TValue& value)
 {
     const auto end = container.end();
 
@@ -67,7 +67,7 @@ inline std::pair<bool, typename TContainer::iterator> find(TContainer& container
 }
 
 template <class TContainer, class TPred>
-inline std::pair<bool, typename TContainer::const_iterator> find_if(const TContainer& container, TPred&& pred)
+static std::pair<bool, typename TContainer::const_iterator> find_if(const TContainer& container, TPred&& pred)
 {
     auto const cend = container.cend();
     auto const it = std::find_if(container.cbegin(), cend, std::forward<TPred>(pred));
@@ -75,7 +75,7 @@ inline std::pair<bool, typename TContainer::const_iterator> find_if(const TConta
 }
 
 template <class TContainer, class TPred>
-inline std::pair<bool, typename TContainer::iterator> find_if(TContainer& container, TPred&& pred)
+static std::pair<bool, typename TContainer::iterator> find_if(TContainer& container, TPred&& pred)
 {
     auto const end = container.end();
     auto const it = std::find_if(container.begin(), end, std::forward<TPred>(pred));
@@ -83,13 +83,13 @@ inline std::pair<bool, typename TContainer::iterator> find_if(TContainer& contai
 }
 
 template <class TContainer, class TPred>
-inline bool all(const TContainer& container, TPred&& pred)
+static bool all(const TContainer& container, TPred&& pred)
 {
     return std::all_of(container.cbegin(), container.cend(), std::forward<TPred>(pred));
 }
 
 template <class TContainer>
-inline bool are_unique(TContainer container)
+static bool are_unique(TContainer container)
 {
     const auto oldEnd = container.end();
     const auto it = std::unique(container.begin(), container.end());
@@ -97,26 +97,26 @@ inline bool are_unique(TContainer container)
 }
 
 template <class TContainer, class TContainerToAppend>
-inline void append(TContainer& base, const TContainerToAppend& toAppend)
+static void append(TContainer& base, const TContainerToAppend& toAppend)
 {
     std::copy(toAppend.cbegin(), toAppend.cend(), std::back_inserter(base));
 }
 
 template <class TContainer, class TContainerToAppend, class TPred>
-inline void append_if(TContainer& base, const TContainerToAppend& toAppend, TPred&& pred)
+static void append_if(TContainer& base, const TContainerToAppend& toAppend, TPred&& pred)
 {
     std::copy_if(toAppend.cbegin(), toAppend.cend(), std::back_inserter(base), std::forward<TPred>(pred));
 }
 
 template <class TContainer, class TPred>
-inline void remove_if(TContainer& container, TPred&& pred)
+static void remove_if(TContainer& container, TPred&& pred)
 {
     const auto it = std::remove_if(container.begin(), container.end(), std::forward<TPred>(pred));
     container.erase(it, container.cend());
 }
 
 template <class TContainer, class TFilter>
-TContainer filter(TContainer const& orig, TFilter&& filter)
+static TContainer filter(TContainer const& orig, TFilter&& filter)
 {
     TContainer filtered;
     std::copy_if(orig.cbegin(), orig.cend(), std::back_inserter(filtered), std::forward<TFilter>(filter));
