@@ -60,3 +60,8 @@ if (found)
     return *it;
 }
 ```
+
+#### 3. String format
+'''
+const auto message = estd::format("Sorry, cannot open file %s. Error code: %d", filePath.c_str(), errorCode);
+'''
