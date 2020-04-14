@@ -25,6 +25,7 @@ set(GMOCK_INCLUDE ${GMOCK_ROOT}/include)
 set(GMOCK_SRC ${GMOCK_ROOT}/src)
 
 file(GLOB SRC_FILES
+    extra_std.h
     ${INCLUDE_DIR}/*.h
     ${PRIVATE_INCLUDE_DIR}/*.h
     ${ESTD_TESTS_DIR}/*.h
