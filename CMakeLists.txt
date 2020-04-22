@@ -38,5 +38,7 @@ include_directories(${INCLUDE_DIR} ${GTEST_INCLUDE} ${GTEST_ROOT} ${GMOCK_INCLUD
 
 add_executable(${PROJECT_NAME} ${SRC_FILES})
 
+target_link_libraries(${PROJECT_NAME} -lgtest -pthread)
+
 set(CXX_STANDARD_REQUIRED true)
 set_property(TARGET ${PROJECT_NAME} PROPERTY CXX_STANDARD 17)

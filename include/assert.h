@@ -9,3 +9,4 @@
 
 #define ESTD_ASSERT_NAME(expr, fmt, ...)\
 assert(expr && estd::format(fmt, ...).c_str())\
+
