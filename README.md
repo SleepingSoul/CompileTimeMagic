@@ -2,11 +2,11 @@
 The things missing in STL
 
 #### Buildability check + unit tests
-| Compiler      | Build status (master) |
+| Compiler      | Buildability check + unit tests (master) |
 |-------------------------------|-----------------------|
 |   Visual Compiler (VS 2019)   |     [![Build status](https://ci.appveyor.com/api/projects/status/oq545onv20jxg9rw/branch/master?svg=true)](https://ci.appveyor.com/project/SleepingSoul/extra-std/branch/master)    |
-|              g++              |     tbd
-|clang|     tbd
+|              g++              |     [![Build status](https://ci.appveyor.com/api/projects/status/k8599s60qtp9rp49?svg=true)](https://ci.appveyor.com/project/SleepingSoul/extra-std-9haqf)
+|Clang|     [![Build status](https://ci.appveyor.com/api/projects/status/it2s4e40nqv94nlf?svg=true)](https://ci.appveyor.com/project/SleepingSoul/extra-std-4mo3p)
 
 
 #### 1. Compile time magic
