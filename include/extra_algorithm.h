@@ -2,6 +2,7 @@
 
 #include <vector>
 #include <algorithm>
+#include <iterator>
 #include "compile_time_magic.h"
 
 namespace estd
