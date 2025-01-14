@@ -1,0 +1,8 @@
+name: build_test
+jobs:
+  build_test:
+    runs_on: self-hosted
+    steps:
+      - name: HelloWorld
+        run: |
+          echo "Hello world"
