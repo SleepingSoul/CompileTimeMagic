@@ -1,0 +1,10 @@
+name: build_test
+on:
+  workflow_dispatch:
+jobs:
+  build_test:
+    runs-on: self-hosted
+    steps:
+      - name: HelloWorld
+        run: |
+          echo "Hello world"
